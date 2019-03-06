@@ -1,0 +1,176 @@
+online_exam
+
+link1 https://overiq.com/django-1-10/handling-media-files-in-django/
+
+****@@@@@@@@@@@@
+
+opeen in edit text form then only copy to get exact
+
+*******commands:
+
+djnago-admin startproject projectname
+
+python manage.py startapp appname
+
+python manage.py makemigrations
+
+python manage.py migrate
+
+python manage.py createsuperuser
+
+****@@@@@@@@@@@@@@@@@@@@@@
+
+******************urls:
+
+!!!!!!!!!!!!!
+
+// url in html
+
+href=" {% url 'appname:name' %} " = action
+
+path('', RedirectView.as_view(url='/catalog/', permanent=True)),
+
+name --->>>>>>> it means name in views.py for calling corresponding method
+
+***root/urls:
+
+from django.contrib import admin
+
+from django.urls import path,include
+
+urlpatterns = [
+
+path('admin/', admin.site.urls),
+
+path('',include('finalexamapp1.urls')),
+
+or
+
+path('aa/',include(appname.ulrs))
+
+]
+
+!!!!!!!!!!
+
+**app/urls:
+
+1.create urls.py in app
+
+from django.urls import path
+
+from . import views
+to remove ambiguity problem
+
+app_name = 'onlineexamapp1'
+
+this app name mentioned to remove hardcore urls
+
+urlpatterns = [
+
+path('', views.home, name='home'),
+path('signup/',views.signup ,name='signup'),
+//this name used for  remove hardcore url
+
+]
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@***
+
+**********models:
+
+refer the below link
+
+for below tutorial github link:
+
+https://github.com/mdn/django-locallibrary-tutorial/blob/master/catalog/models.py
+
+https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Models
+
+def str(self):a
+
+return self.username or title or anything
+
+%%%%%**********************
+
+verbose_name and verbose_name _plural -. for plural
+
+class Child(models.Model):
+    name= models.CharField(max_length=100, verbose_name="Child's First Name and Last Name")
+    weight= models.DecimalField(max_digits=3, decimal_places=2)
+
+class Meta:
+
+    verbose_name = 'Child'
+    verbose_name_plural = 'Children'
+    ordering = ['-my_field_name']
+    - for reverse order we can mention multiple fields in above list
+ 
+def get_absolute_url(self):
+    """Returns the url to access a particular author instance."""
+    return reverse('author-detail', args=[str(self.id)])
+    it is useful to view in admin site 
+
+def __str__(self):
+    return self.name
+
+%%%%%%%%%%%%%%%%&&&&&***********************
+
+********* Admin:
+
+from catalog.models import Author, Genre, Book, BookInstance
+
+admin.site.register(Book)
+
+get_absolute_url()
+
+by above statement we can see following view on site button beside to history button
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@2
+
+**forms: general form of django we can use but to get good look we have to use crispy_forms of djnago
+
+if u want then refer the below link
+
+https://www.merixstudio.com/blog/django-crispy-forms-what-are-they-about/
+
+https://django-crispy-forms.readthedocs.io/en/latest/
+
+**********************8@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@****************8888888
+
+extend from User
+
+// by that we can easily handel login and logut
+
+//@login
+
+dashboard:
+
+logi_with_social_websites:
+
+*************************export csv file **********************
+
+https://www.mastercode.online/courses/tutorial/export-csv-from-django/
+
+https://www.youtube.com/watch?v=roYopMO4Eo8&index=3&list=PLLxk3TkuAYnpm24Ma1XenNeq1oxxRcYFT
+
+#################image upload **************
+
+https://github.com/sibtc/simple-file-upload/blob/master/uploads/core/templates/core/simple_upload.html
+
+@@@@@@@@@@@@@
+
+@@@@@@@@@@@@@@@ SMTP##############
+
+read below link matter to enble your gmail as a smtp server for your ewebapplication (it is not good)
+
+but contiue for some months
+
+https://www.codingforentrepreneurs.com/blog/use-gmail-for-email-in-django/
+
+password_reset link and other important
+
+https://www.youtube.com/watch?v=-tyBEsHSv7w
+
+    © 2019 GitHub, Inc.
+    Terms
+    Privacy
+    Security
