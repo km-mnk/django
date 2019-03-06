@@ -1,0 +1,170 @@
+class-based views
+
+
+
+
+class based views are simple and reduce th lot of code 
+
+in views.py 
+
+path("something or not ",views.classname.as_view(),name="somwthing or not")
+
+
+1.View
+
+this is view used for generally hhtpresponse purpose
+
+class view1(View):
+  def get(self,request):
+      return HttpResponse("okkkk")
+      
+ //this get mehtod will call automatically
+ 
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+2.ListView
+// for this default tempalte_name is small letters of model 
+//create template in template folder is smalllettersofmodel_list.html
+// or we can send to our custom template
+// better to use default template
+// we have to mention conte_name
+ex:
+calss listview1(ListView):
+  model1=modelname( # we hve to import models at starting  area)
+  or ovveride method 
+  def get_queryset(self):
+  below example read
+ #post is model
+ # he used custom template_name not default
+ 
+
+class ListView(ListView):
+    model = Post
+    template_name = 'blog/user_posts.html'  # <app>/<model>_<viewtype>.html
+    context_object_name = 'posts'
+
+    def get_queryset(self):
+    # user =get.objects.all() or below is custom
+    
+        user = get_object_or_404(User, username=self.kwargs.get('username'))
+        
+        # above line handle both error and data 
+        
+        return Post.objects.filter(author=user).order_by('-date_posted')
+
+
+ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 
+
+3.DetailView
+
+# this is will give complete information about particular instace of the model
+#default template_name= small_lettersof modelname_detail.html
+ex:
+class SchoolDetailView(DetailView):
+    context_object_name = 'school_details'
+    model = models.School
+    template_name = 'basic_app/school_detail.html'
+    
+  # above class wil give full info about particular school 
+  #to get total students details of the student who studying  in that school see below code
+  
+  class School(models.Model):
+    name = models.CharField(max_length=256)
+    principal = models.CharField(max_length=256)
+    location = models.CharField(max_length=256)
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse("basic_app:detail",kwargs={'pk':self.pk})
+
+class Student(models.Model):
+    name = models.CharField(max_length=256)
+    age = models.PositiveIntegerField()
+    school = models.ForeignKey(School,related_name='students')
+    
+    
+    Related_name is maintain key_role in this
+    
+    see html this one of the important
+    
+      <div class="jumbotron">
+    <h1>Welcome to the School Detail Page</h1>
+    <h2>School Details:</h2>
+    <p>Id_num: {{school_details.id}}</p>
+    <p>Name: {{school_details.name}}</p>
+    <p>Principal: {{school_details.principal}}</p>
+    <p>Location: {{school_details.location}}</p>
+    <h3>Students:</h3>
+
+      {% for student in school_details.students.all %}
+        <p>{{student.name}} who is {{student.age}} years old.</p>
+      {% endfor %}
+
+
+
+for more refernce check tutorial of udemy 
+
+
+    
+    
+    
+    
+    
+    
+
+
+4.templateView
+// main purpose of this view is send to template and context
+
+class templatview1(TemplateView):
+    template_name='path of the template"
+    //context to send data to template
+    def get_context_data(** kwargs):
+      context=super().get_context_data(** kwargs)
+      context["name"]='maldanna'
+      return context
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+    © 2019 GitHub, Inc.
+    Terms
+    Privacy
+    Security
+    Status
+    Help
+
