@@ -19,6 +19,8 @@ features:
 csrf :Cross-Site Request Forgery  it is able to provide security service.
 
 
+wsgi.py : webserver gate way interface
+
 
 
 
