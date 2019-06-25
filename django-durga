@@ -1,0 +1,24 @@
+django is name of guitarist
+
+
+features:
+
+1.fast
+2.fully loaded(lot of libaries for common use of webapplication)
+  a.authentication 
+  b.security
+  c.session management 
+  ......
+  
+3.scalble :(able to handle large number of request also).
+
+4.versatile : can use in any domain (like private applications or government applications ...)
+
+
+
+csrf :Cross-Site Request Forgery  it is able to provide security service.
+
+
+
+
+
