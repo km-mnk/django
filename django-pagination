@@ -1,0 +1,53 @@
+
+
+from django.shortcuts import render
+
+from django.core.paginator import Paginator
+
+# Create your views here.
+
+
+
+def page(request):
+
+    posts=[]
+    for i in range(0,1000):
+        posts.append(i)
+
+    pag=Paginator(posts,10)
+
+    #requesting_page=request.GET.get('page')
+
+    pav=pag.get_page(400)
+
+    return render(request,'pageinationapp/page.html',{'posts':pav})
+
+==================================================================================
+
+methods or functions in pagination :
+
+here pagination apllied on posts in viwes
+
+in html 
+{{ posts.number }} -->> it gives present page number
+{{posts.paginator.count}} -->total number of posts objects
+
+{{posts.paginator.num_pages}} --> total number of pages 
+{{posts.paginator.page_range}} --> it display page ranges lik 1 to 100
+
+
+{{posts.has_previous}}==>to day next page is available or not
+{{posts.has_next}} 
+
+
+=======================================================================
+
+
+
+
+
+
+
+
+
+
