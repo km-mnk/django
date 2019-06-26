@@ -11,6 +11,8 @@ http://127.0.0.1:8000
 8000: this is port on which our surver is ative genrally local host contains lot of ports internally
 
 
+ we can write 
+ http://localhost:8000
  
 
 
