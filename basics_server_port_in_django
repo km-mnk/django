@@ -1,0 +1,39 @@
+webserver:
+
+which is providing environment to run our web applications
+
+
+
+==========================
+http://127.0.0.1:8000
+127.0.0.1 is indicating that local host it means our applications is running on our local host machine only 
+
+8000: this is port on which our surver is ative genrally local host contains lot of ports internally
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
