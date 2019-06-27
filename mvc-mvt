@@ -1,0 +1,14 @@
+mvc:
+model :====>businnes logic
+view :=======> presentation logic
+controller :======> controlling all activites
+
+mvt:
+
+model :==> database
+view :=====> business logic
+template :=======> presenttion purpose
+
+here django itself act as controller there is no external controllers
+
+
