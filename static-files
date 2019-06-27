@@ -1,0 +1,78 @@
+
+static files we can create in app or project
+
+
+if static folder in project then :
+
+BASE_DIR=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+STATIC_DIR=os.path.join(BASE_DIR,static)
+
+
+
+then add at end of settings  lik this 
+
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/2.0/howto/static-files/
+
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS=[   STATIC_DIR,
+
+              ]
+
+
+
+in templates 
+
+{
+
+
+{%load staticfiles %}
+
+
+if can create folders with appnames  if we havev more than 1 application
+
+
+
+ 
+ 
+<img src=" {% static "fl_app/img/aaa.jpg" %}" >  </img>
+
+
+fl_app is folder name of app which is created in static folder also
+
+
+===========================
+
+if static folder in app
+ then dont do any thing in settings.py 
+ 
+ in html 
+ {%load static %}
+ 
+ 
+ 
+<img src=" {% static "fl_app/img/aaa.jpg" %}" >  </img>
+
+
+fl_app is folder name of appfolder only
+
+ =================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
