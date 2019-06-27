@@ -1,0 +1,41 @@
+To add templates folder in settings.py file we know following things:
+
+1.print(__file__)   ==> it will display the current file name like test.py
+
+2.to know complete path we should do like this :
+  a.import os
+  print(os.path.abspath(__file__))  =====> it will display the complete path of  that file 
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
