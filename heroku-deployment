@@ -32,19 +32,201 @@ checklist:  follow this steps to deploy your website in heroku server
 
 steps:-follow:
 
+1.create account second time need not to create just login is enough
+2.pip install pipenv ==>alredy you have in your computer
+3.install git to copy files from your computer to heroku websites  ==>alredy we have
+4. install heroku ==>you instlled in your computer
+5. firstall fall your computer terminal going to open with (base) try to avoid this by ctrl+c immediately after open terminal
+6.heroku login 
+it will ask login into website through browser or through command so
+bettr to login in browser alredy o start this stuff
+7.goto deploy folder(to which u are going to create virtual environment) in terminal 
+$ virtulenv
+
+then some folder will add into your deploy folder 
+
+8.goto bin folder which in deploy folder(after getting virtual env for that folder)
+cd bin
+then 
+$ source activate
+
+9.install django with proper version (to this goto pycharm terminal goto project folder then type
+$ pip freeze
+then it will show what are the libries your had installed for the project
+then install django nd whatever librerie you have used in your project please installe them in your virtualenv
+
+css==0.1
+Django==2.0
+django-crispy-forms==1.7.2
+joblib==0.13.1
+nltk==3.4
+numpy==1.15.4
+pandas==0.23.4
+pickle5==0.0.6
+Pillow==5.3.0
+python-dateutil==2.7.5
+pytz==2018.7
+scikit-learn==0.20.2
+scipy==1.2.1
+singledispatch==3.4.0.3
+six==1.12.0
+sklearn==0.0
+users==1.0.dev0
+xlrd==1.2.0
+
+
+
+in these which are u used in your project install them
+
+
+10.
+https://devcenter.heroku.com/articles/django-app-configuration(take its help if you need)
+
+Create Procfile fiel  without any extension in your project main folder lik deploy/pagination/ here  
+with manage.py .... file)
+
+
+in that file copy and pase this  =========>>     web: gunicorn myproject.wsgi  ====>(here myprojectname should
+                                                                                    your project name wit case-sensitive)
+
+
+11.install  in deploy/pagination (++> this my main projet folder) 
+
+
+$pip install gunicorn
 
 
 
 
 
 
+12.$pip install django-heroku
+error you will get:
+
+ERROR: Complete output from command python setup.py egg_info:
+    ERROR: running egg_info
+    creating pip-egg-info/psycopg2.egg-info
+    writing pip-egg-info/psycopg2.egg-info/PKG-INFO
+    writing dependency_links to pip-egg-info/psycopg2.egg-info/dependency_links.txt
+    writing top-level names to pip-egg-info/psycopg2.egg-info/top_level.txt
+    writing manifest file 'pip-egg-info/psycopg2.egg-info/SOURCES.txt'
+    
+    Error: pg_config executable not found.
+    
+    pg_config is required to build psycopg2 from source.  Please add the directory
+    containing pg_config to the $PATH or specify the full executable path with the
+    option:
+    
+        python setup.py build_ext --pg-config /path/to/pg_config build ...
+    
+    or with the pg_config option in 'setup.cfg'.
+    
+    If you prefer to avoid building psycopg2 from source, please install the PyPI
+    'psycopg2-binary' package instead.
+    
+    For further information please check the 'doc/src/install.rst' file (also at
+    <http://initd.org/psycopg/docs/install.html>).
+    
+    ----------------------------------------
+ERROR: Command "python setup.py egg_info" failed with error code 1 in /tmp/pip-install-kvecor66/psycopg2/
+
+
+follow:https://stackoverflow.com/questions/5420789/how-to-install-psycopg2-with-pip-on-python
+
+
+then install 
+
+
+Debian/Ubuntu
+Python 2
+sudo apt install libpq-dev python-dev
+Python 3
+sudo apt install libpq-dev python3-dev
+Additional
+If none of the above solve your issue, try
+
+sudo apt install build-essential
+or
+
+sudo apt install postgresql-server-dev-all
 
 
 
+13.import django_heroku   in settings.py ====> it is at top
+# Activate Django-Heroku.
+django_heroku.settings(locals())
+  ===>add in settings.py at bottom of the file
+  
+  
+ 14 here we have to say heroku server to install our required libreries in it 
+ 
+ so requirements.txt we should provide by this below way
+ 
+ in deploy/pagination 
+ $pip freeze > requirements.txt
+ 
+ 
+15.$ heroku create maldannapagination ==.(no special charecters)  deploy/pagination
+
+16. $ git init ====> deploy/pagination
+
+to sheck status 
+$git status
+16.a
+$git add --all
+
+
+$git commit -m *this is my first commit*
+
+
+if it will ask you then do this below :
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+=====> so execut eabove to commands with your details
+
+then 
+$heroku git:remote -a maldannapagination  ===> this is ur website name that is previously we mentione before sets lok at them
 
 
 
+$git push heroku master
 
+
+DEPLOY WILL OVER
+
+but database might be work propely some time 
+
+then 
+
+follow this steps:;
+
+$heroku run bash  ====(deploy/pagination)
+ it give linux command the ls see file 
+ 
+ then 
+ $python manage.py makemigrations
+ $python manage.py migrate
+ 
+ python manage.py createsuperuser 
+ 
+ if you want 
+ 
+ 
+ exit()
+ 
+ 
+ 
+ 
+ if you chane any cod ethen again start from  16.a
+ 
+ 
 
 
 
