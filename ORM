@@ -1,0 +1,19 @@
+
+
+Students.objects.all()
+Student.objects.filter(marks__lt=35)
+Student.objects.filter(marks__gte=35)  ++> graterthanor equal
+Student.objects.filter(names__startswith='ab')
+
+Studnet.objects.filter(names__startswith='ab'
+
+Students.objects.all().order_by('marks')===>ascending order
+
+Students.objects.all().order_by('-marks') ===> descending order
+
+
+students.objects.filter(marks__gte=30,marks__lt=90)
+
+30<=marks<90
+
+
