@@ -1,0 +1,76 @@
+faker_module:
+
+install:
+
+pip install faker
+ in that required main project or in pycharm goto through gui only
+
+===============================================
+
+from faker import Faker
+
+
+fake1=Faker()
+
+===> to fake name
+fake1.name()  ----> it generate both first and last name  
+
+======> to first fakename
+fake1.first_name()
+
+====> to last fakename
+fake1.last_name()
+
+
+==============> fake Date value:
+
+
+fake1.date()
+
+
+
+=============> fake randomnumber:
+
+fake.random_number(5)  == 5 is number of digits upto (less or atmost that many digits)
+
+
+
+==============> fake eamilid
+
+fake1.email()
+
+
+==============> random_int
+
+fake1.random_int(min=0,max=111111)
+
+=============> slect random element in given group
+
+fake.random_element(elements=('teammember','projectlead','teamlead'))
+
+
+er=Employee.objects.get_create(name=fname,......)
+
+if no data record with provided then record will insert into databse otherwise it will return ned to doany thing on retrn record 
+
+
+=======================================================
+
+add this file in your app where model are thre to fake data
+
+
+or see below pic
+/home/maldanna/Pictures/faker.png
+
+
+
+
+
+
+
+
+
+
+
+
+
